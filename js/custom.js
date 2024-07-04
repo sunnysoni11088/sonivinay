@@ -82,26 +82,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-// Select the ul element
-const marqueeContent = document.querySelector('.marquee-content');
 
-// Function to randomly activate an li element
-function activateRandomItem() {
-    // Remove active class from all li elements
-    const allItems = marqueeContent.querySelectorAll('li');
-    allItems.forEach(item => item.classList.remove('active'));
-
-    // Generate a random index
-    const randomIndex = Math.floor(Math.random() * allItems.length);
-
-    // Add active class to the randomly selected li element
-    allItems[randomIndex].classList.add('active');
-}
-
-// Activate a random item initially
-activateRandomItem();
-
-// Activate a random item every 2 seconds (adjust interval as needed)
-setInterval(() => {
-    activateRandomItem();
-}, 2000); // Change interval time (in milliseconds) as per your preference
+/*-------------------------------*/
+$('.owl-carousel').owlCarousel({
+    stagePadding: 200,
+    loop:true,
+    items:3,
+    lazyLoad: true,
+    autoplay: true,
+    autoplaySpeed: 1000,
+    autoplayTimeout: 2000,
+    autoplayHoverPause: true
+})
